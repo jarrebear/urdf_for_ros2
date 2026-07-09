@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Description Topic1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 548
   - Class: rviz_common/Selection
@@ -72,7 +73,27 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        claw_a_r_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        claw_b_r_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         head_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lower_arm_r_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        upper_arm_r_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -94,9 +115,17 @@ Visualization Manager:
         All Enabled: true
         base_link:
           Value: true
+        claw_a_r_link:
+          Value: true
+        claw_b_r_link:
+          Value: true
         head_link:
           Value: true
-      Marker Scale: 1
+        lower_arm_r_link:
+          Value: true
+        upper_arm_r_link:
+          Value: true
+      Marker Scale: 0.30000001192092896
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -105,6 +134,12 @@ Visualization Manager:
         base_link:
           head_link:
             {}
+          upper_arm_r_link:
+            lower_arm_r_link:
+              claw_a_r_link:
+                {}
+              claw_b_r_link:
+                {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -168,10 +203,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5453982353210449
+      Pitch: 0.21539826691150665
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.8953980207443237
+      Yaw: 0.37039828300476074
     Saved: ~
 Window Geometry:
   Displays:
