@@ -9,8 +9,8 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
     ####### DATA INPUT ##########
-    urdf_file = 'box_bot_geometric_meshes.urdf'
-    #xacro_file = "urdfbot.xacro"
+    urdf_file = 'box_bot_meshes_collisions_inertias.urdf'
+    #xacro_file = "box_bot.xacro"
     package_description = "my_box_bot_description"
 
     ####### DATA INPUT END ##########
@@ -31,6 +31,7 @@ def generate_launch_description():
     # RVIZ Configuration
     rviz_config_dir = os.path.join(get_package_share_directory(package_description), 'rviz', 'urdf_vis.rviz')
 
+
     rviz_node = Node(
             package='rviz2',
             executable='rviz2',
@@ -38,7 +39,6 @@ def generate_launch_description():
             name='rviz_node',
             parameters=[{'use_sim_time': True}],
             arguments=['-d', rviz_config_dir])
-
 
     # create and return launch description object
     return LaunchDescription(
