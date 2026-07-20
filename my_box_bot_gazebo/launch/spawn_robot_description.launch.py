@@ -35,6 +35,24 @@ def generate_launch_description():
         output="screen",
     )
 
+    # ROS-Gazebo Bridge #
+    gz_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        name="gz_bridge",
+        arguments=[
+            "/clock" + "@rosgraph_msgs/msg/Clock" + "[gz.msgs.Clock",
+            "/cmd_vel" + "@geometry_msgs/msg/Twist" + "@gz.msgs.Twist",
+            "/tf" + "@tf2_msgs/msg/TFMessage" + "[gz.msgs.Pose_V",
+            "/odom" + "@nav_msgs/msg/Odometry" + "[gz.msgs.Odometry",
+            "/joint_states" + "@sensor_msgs/msg/JointState" + "[gz.msgs.Model",
+        ],
+        remappings=[
+            # there are no remappings for this robot description
+        ],
+        output="screen",
+    )
+
     # Create and Return the Launch Description Object #
     return LaunchDescription(
         [
@@ -46,5 +64,6 @@ def generate_launch_description():
             declare_spawn_z,
             declare_spawn_yaw,
             gz_spawn_entity,
+            gz_bridge
         ]
     )
