@@ -43,10 +43,10 @@
       </link>
     </model>
 
-    <include>
+    <!-- <include>
       <uri>model://box_room</uri>
       <pose>0 0 -0.095708 0 0 0</pose>
-    </include>
+    </include> -->
     
   </world>
 </sdf>
